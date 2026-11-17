@@ -1,7 +1,7 @@
 import boto3
 
-session = boto3.Session(profile_name="moj")
+session = boto3.Session()
 
-sts = session.client("sts")
-
-print(sts.get_caller_identity())
+print("Profile:", session.profile_name)
+print("Region:", session.region_name)
+print("Credentials:", session.get_credentials())
